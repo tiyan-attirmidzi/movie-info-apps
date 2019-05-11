@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' show Client;
 import '../models/model_item.dart';
+import '../models/model_trailer.dart';
 
 class MovieApiProvider {
   Client client = Client();
@@ -21,4 +22,16 @@ class MovieApiProvider {
       throw Exception('Failed to load post');
     }
   }
+
+  Future<TrailerModel> fetchTrailer(int movieId) async {
+    final response =
+        await client.get("$_baseUrl/$movieId/videos?api_key=$_apiKey");
+
+    if (response.statusCode == 200) {
+      return TrailerModel.fromJson(json.decode(response.body));
+    } else {
+      throw Exception('Failed to load trailers');
+    }
+  }
+
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'views/list_movie.dart';
+import 'views/view_movie_list.dart';
 
 class App extends StatelessWidget {
   @override
@@ -10,6 +10,7 @@ class App extends StatelessWidget {
         home: Scaffold(
           body: MovieList(),
         ),
+        debugShowCheckedModeBanner: false,
       );
   }
 }

@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import '../lib/src/views/list_movie.dart';
+import '../lib/src/views/view_movie_list.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
